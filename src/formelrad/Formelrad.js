@@ -12,6 +12,12 @@ export default function Formelrad() {
         message: ""
     })
 
+    const handleClear = (event) => {
+        event.preventDefault();
+        console.log("handleClear");
+        setValues(values => ({...values, u:"", i:"", r:"", p:"", message: ""}))
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log("handleSubmit")
