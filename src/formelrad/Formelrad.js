@@ -21,7 +21,6 @@ export default function Formelrad() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log("handleSubmit")
-        resetColors();
         if (values.u === "" && values.i === "") {
             /*calculate u and i */
             setValues(values => ({...values, u: Math.sqrt(values.p * values.r)}));
@@ -36,6 +35,13 @@ export default function Formelrad() {
             setValues(values => ({...values, p: values.i * values.i * values.r}));
         }
     }
+
+    const colors = {
+        u: "#ff0000", // Spannung
+        r: "#0000ff", // Widerstand
+        i: "#00ff00", // Stromstärke
+        p: "#ffa500"  // Leistung
+    };
 
     return (
         <>
